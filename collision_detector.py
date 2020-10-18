@@ -1,4 +1,4 @@
-import hashlib, random, string, _thread, time
+import hashlib, random, string, time
 
 # Author Daniel Parekh @Pendragonz
 
@@ -45,20 +45,20 @@ def main_loop(overlap):
                         print("Overlap found in " + str(attempts) + " attempts!")
                         return
 
-        if attempts < 38000000:
+        if attempts < 80000000:
             all_hashes.add(dig)
             pairs.append((msg, dig))
-        elif attempts == 38000000:
+        elif attempts == 80000000:
             print("No longer saving new hashes to save memory.")
 
         attempts += 1
         
-        if attempts % 250000 == 0:
+        if attempts % 500000 == 0:
             print(str(attempts) + " attempts")
 
 
 
 if __name__ == '__main__':
-    print("Thank you for running Ram Consumer 3000 v2.1!")
+    print("Thank you for running Ram Consumer 3000 v2.2!")
     main_loop(15)
 
